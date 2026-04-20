@@ -1,4 +1,4 @@
-module github.com/rclone/rclone
+module github.com/Somebodybro/rclone-WA-proto
 
 go 1.25.0
 
