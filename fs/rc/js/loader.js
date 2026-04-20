@@ -21,16 +21,16 @@ script.onload = function () {
 };
 document.head.appendChild(script);
 
-rcValid.then(() => {
+rcValid.then(async () => {
   // Some examples of using the rc call
   //
   // The rc call takes two parameters, method and input object and
   // returns an output object.
-  //
+  // 
   // If the output object has an "error" and a "status" then it is an
   // error (it would be nice to signal this out of band).
-  console.log("core/version", rc("core/version", null))
-  console.log("rc/noop", rc("rc/noop", {"string":"one",number:2}))
-  console.log("operations/mkdir", rc("operations/mkdir", {"fs":":memory:","remote":"bucket"}))
-  console.log("operations/list", rc("operations/list", {"fs":":memory:","remote":"bucket"}))
+  console.log("core/version", await rc("core/version", null))
+  console.log("rc/noop", await rc("rc/noop", {"string":"one",number:2}))
+  console.log("operations/mkdir", await rc("operations/mkdir", {"fs":":memory:","remote":"bucket"}))
+  console.log("operations/list", await rc("operations/list", {"fs":":memory:","remote":"bucket"}))
 })

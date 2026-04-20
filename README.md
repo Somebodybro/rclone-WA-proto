@@ -1,3 +1,22 @@
+# Rclone-WA
+
+## NOTE
+
+This is a fork of the rclone repository. Please
+use the original repository for your project, whenever possible
+due to this being a poc with no maintenance guarantees.
+[original rclone](https://github.com/rclone/rclone)
+For the foreseeable future this fork will stay as a prototype and
+not a pr. This is due to some issues needing less than optimal
+fixes and for the reason that only select backend will be ported to work.
+
+## About the fork
+
+This repository was made to showcase the drive backend
+working in WA. Currently it works, but access and refresh tokens
+need to be supplied to it an the nonInteractive flag needs to be
+set to true to prevent rclone from attempting to start binaries.
+
 <!-- markdownlint-disable-next-line first-line-heading no-inline-html -->
 [<img src="https://rclone.org/img/logo_on_light__horizontal_color.svg" width="50%" alt="rclone logo">](https://rclone.org/#gh-light-mode-only)
 <!-- markdownlint-disable-next-line no-inline-html -->
@@ -15,8 +34,6 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/rclone/rclone)](https://goreportcard.com/report/github.com/rclone/rclone)
 [![GoDoc](https://godoc.org/github.com/rclone/rclone?status.svg)](https://godoc.org/github.com/rclone/rclone)
 [![Docker Pulls](https://img.shields.io/docker/pulls/rclone/rclone)](https://hub.docker.com/r/rclone/rclone)
-
-# Rclone
 
 Rclone *("rsync for cloud storage")* is a command-line program to sync files and
 directories to and from different cloud storage providers.

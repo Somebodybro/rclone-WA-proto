@@ -18,6 +18,7 @@ import (
 	"net/http"
 	"os"
 	"path"
+	"runtime"
 	"slices"
 	"sort"
 	"strconv"
@@ -1255,6 +1256,9 @@ func parseExtensions(extensionsIn ...string) (extensions, mimeTypes []string, er
 
 // getClient makes an http client according to the options
 func getClient(ctx context.Context, opt *Options) *http.Client {
+	if runtime.GOOS == "js" {
+		return &http.Client{}
+	}
 	t := fshttp.NewTransportCustom(ctx, func(t *http.Transport) {
 		if opt.DisableHTTP2 {
 			t.TLSNextProto = map[string]func(string, *tls.Conn) http.RoundTripper{}

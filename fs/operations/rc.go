@@ -182,6 +182,38 @@ func init() {
 	}
 }
 
+func rcGetFileData(ctx context.Context, in rc.Params) (out rc.Params, err error) {
+	fs, remote, err := rc.GetFsAndRemoteNamed(ctx, in, "fs", "remote")
+	if err != nil {
+		return nil, err
+	}
+	filePath := path.Join(fs.Root(), remote)
+	obj, _ := fs.NewObject(ctx, filePath)
+	size := obj.Size()
+	data := make([]byte, size)
+	reader, err := obj.Open(ctx)
+	reader.Read(data)
+	reader.Close()
+	return rc.Params{"data": data}, err
+}
+func init() {
+	rc.Add(rc.Call{
+		Path:         "operations/cat",
+		AuthRequired: true,
+		Fn:           rcGetFileData,
+		Title:        "returns a single files data",
+		Help: `This takes the following parameters:
+
+- fs - a remote name string e.g. "drive:"
+- remote - a path on the remote e.g "file2.txt"
+The result is a params object with the data param containing
+retrieved data.
+
+This is a fork specific operation needed for WASM.
+`,
+	})
+}
+
 // Copy a file
 func rcMoveOrCopyFile(ctx context.Context, in rc.Params, cp bool) (out rc.Params, err error) {
 	srcFs, srcRemote, err := rc.GetFsAndRemoteNamed(ctx, in, "srcFs", "srcRemote")

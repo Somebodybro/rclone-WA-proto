@@ -23,9 +23,14 @@ import (
 	_ "github.com/rclone/rclone/fs/operations"
 	_ "github.com/rclone/rclone/fs/sync"
 
-	//	_ "github.com/rclone/rclone/backend/all" // import all backends
+	// _ "github.com/rclone/rclone/backend/all" // import all backends
 
 	// Backends
+	_ "github.com/rclone/rclone/backend/alias"
+	_ "github.com/rclone/rclone/backend/drive"
+	_ "github.com/rclone/rclone/backend/ftp"
+	_ "github.com/rclone/rclone/backend/http"
+	_ "github.com/rclone/rclone/backend/local"
 	_ "github.com/rclone/rclone/backend/memory"
 )
 
@@ -33,22 +38,6 @@ var (
 	document js.Value
 	jsJSON   js.Value
 )
-
-func getElementById(name string) js.Value {
-	node := document.Call("getElementById", name)
-	if node.IsUndefined() {
-		log.Fatalf("Couldn't find element %q", name)
-	}
-	return node
-}
-
-func time() int {
-	return js.Global().Get("Date").New().Call("getTime").Int()
-}
-
-func paramToValue(in rc.Params) (out js.Value) {
-	return js.Value{}
-}
 
 // errorValue turns an error into a js.Value
 func errorValue(method string, in js.Value, err error) js.Value {
@@ -70,49 +59,64 @@ func errorValue(method string, in js.Value, err error) js.Value {
 }
 
 // rcCallback is a callback for javascript to access the api
-//
-// FIXME should this should return a promise so we can return errors properly?
 func rcCallback(this js.Value, args []js.Value) interface{} {
-	ctx := context.Background() // FIXME
-	log.Printf("rcCallback: this=%v args=%v", this, args)
+	method := args[0].String()
+	inRaw := args[1]
 
 	if len(args) != 2 {
 		return errorValue("", js.Undefined(), errors.New("need two parameters to rc call"))
 	}
-	method := args[0].String()
-	inRaw := args[1]
-	var in = rc.Params{}
-	switch inRaw.Type() {
-	case js.TypeNull:
-	case js.TypeObject:
-		inJSON := jsJSON.Call("stringify", inRaw).String()
-		err := json.Unmarshal([]byte(inJSON), &in)
-		if err != nil {
-			return errorValue(method, inRaw, fmt.Errorf("couldn't unmarshal input: %w", err))
-		}
-	default:
-		return errorValue(method, inRaw, errors.New("in parameter must be null or object"))
-	}
 
-	call := rc.Calls.Get(method)
-	if call == nil {
-		return errorValue(method, inRaw, fmt.Errorf("method %q not found", method))
-	}
+	handler := js.FuncOf(func(this js.Value, args []js.Value) any {
+		resolve := args[0]
+		reject := args[1]
+		go func() {
+			ctx := context.Background() // FIXME
+			log.Printf("rcCallback: this=%v args=%v", this, args)
 
-	out, err := call.Fn(ctx, in)
-	if err != nil {
-		return errorValue(method, inRaw, fmt.Errorf("method call failed: %w", err))
-	}
-	if out == nil {
+			var in = rc.Params{}
+			switch inRaw.Type() {
+			case js.TypeNull:
+			case js.TypeObject:
+				inJSON := jsJSON.Call("stringify", inRaw).String()
+				err := json.Unmarshal([]byte(inJSON), &in)
+				if err != nil {
+					reject.Invoke(errorValue(method, inRaw, fmt.Errorf("couldn't unmarshal input: %w", err)))
+					return
+				}
+			default:
+				reject.Invoke(errorValue(method, inRaw, errors.New("in parameter must be null or object")))
+				return
+			}
+
+			call := rc.Calls.Get(method)
+			if call == nil {
+				reject.Invoke(errorValue(method, inRaw, fmt.Errorf("method %q not found", method)))
+				return
+			}
+
+			out, err := call.Fn(ctx, in)
+			if err != nil {
+				reject.Invoke(errorValue(method, inRaw, fmt.Errorf("method call failed: %w", err)))
+				return
+			}
+			if out == nil {
+				log.Print("resolve nil")
+				resolve.Invoke(nil)
+				return
+			}
+			var out2 map[string]interface{}
+			err = rc.Reshape(&out2, out)
+			if err != nil {
+				reject.Invoke(errorValue(method, inRaw, fmt.Errorf("result reshape failed: %w", err)))
+				return
+			}
+			resolve.Invoke(out2)
+		}()
 		return nil
-	}
-	var out2 map[string]interface{}
-	err = rc.Reshape(&out2, out)
-	if err != nil {
-		return errorValue(method, inRaw, fmt.Errorf("result reshape failed: %w", err))
-	}
-
-	return js.ValueOf(out2)
+	})
+	promiseConstructor := js.Global().Get("Promise")
+	return promiseConstructor.New(handler)
 }
 
 func main() {

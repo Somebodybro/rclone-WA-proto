@@ -3,13 +3,17 @@
 package rc
 
 import (
+	"bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
 	"maps"
 	"math"
+	"mime/multipart"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/rclone/rclone/fs"
@@ -106,6 +110,8 @@ func (p Params) Get(key string) (any, error) {
 //
 // If the parameter isn't found then error will be of type
 // ErrParamNotFound and the returned value will be nil.
+// Due to http.request not being passable from JS, this can
+// Also accept a map[string]
 func (p Params) GetHTTPRequest() (*http.Request, error) {
 	key := "_request"
 	value, err := p.Get(key)
@@ -114,7 +120,87 @@ func (p Params) GetHTTPRequest() (*http.Request, error) {
 	}
 	request, ok := value.(*http.Request)
 	if !ok {
-		return nil, ErrParamInvalid{fmt.Errorf("expecting http.request value for key %q (was %T)", key, value)}
+		asMap, ok := value.(map[string]any)
+		if !ok {
+			return nil, ErrParamInvalid{fmt.Errorf("expecting http.request or map[string]any value for key %q (was %T)", key, value)}
+		}
+		method, ok := asMap["method"].(string)
+		if !ok {
+			return nil, ErrParamInvalid{fmt.Errorf("expected map[string] request to have value for key method")}
+		}
+		url, ok := asMap["url"].(string)
+		if !ok {
+			return nil, ErrParamInvalid{fmt.Errorf("expected map[string] request to have value for key url")}
+		}
+		dataFloats, ok := asMap["data"].(map[string]interface{})
+		if !ok {
+			log.Printf("%T", asMap["data"].(map[string]interface{})["0"])
+			log.Print(asMap["data"])
+			dataFloats = map[string]interface{}{}
+		}
+		data := make([]byte, len(dataFloats))
+		for key, fl := range dataFloats {
+			asFloat, ok := fl.(float64)
+			if ok {
+				i, err := strconv.Atoi(key)
+				if err != nil {
+					log.Print(err)
+					break
+				}
+				data[i] = byte(asFloat)
+			}
+		}
+		isMultipart, ok := asMap["multipart"].(bool)
+		if !ok {
+			isMultipart = false
+		}
+		headers, ok := asMap["headers"].(map[string]string)
+		if !ok {
+			headers = map[string]string{}
+		}
+
+		if isMultipart {
+			body := new(bytes.Buffer)
+			writer := multipart.NewWriter(body)
+			multipartName, ok := asMap["mpName"].(string)
+			if !ok {
+				multipartName = ""
+			}
+
+			multipartFileName, ok := asMap["mpFName"].(string)
+			if !ok {
+				multipartFileName = ""
+			}
+
+			part, err := writer.CreateFormFile(multipartName, multipartFileName)
+			if err != nil {
+				return nil, err
+			}
+			part.Write(data)
+			writer.Close()
+			bAsString := body.String()
+			reg, err := http.NewRequest(method, url, bytes.NewBuffer([]byte(bAsString)))
+			if err != nil {
+				return nil, err
+			}
+			log.Print("multipart/form;boundary=" + strings.Replace(strings.Split(bAsString, "\n")[0], "--", "", 1))
+			for key, value := range headers {
+				reg.Header.Add(key, value)
+			}
+			reg.Header.Add("Content-Type", "multipart/form;boundary="+strings.Replace(strings.Split(bAsString, "\n")[0], "--", "", 1))
+
+			return reg, nil
+		} else {
+			reg, err := http.NewRequest(method, url, bytes.NewBuffer(data))
+			if err != nil {
+				return nil, err
+			}
+			for key, value := range headers {
+				reg.Header.Add(key, value)
+			}
+			return reg, nil
+		}
+
 	}
 	return request, nil
 }
@@ -131,6 +217,7 @@ func (p Params) GetHTTPResponseWriter() (http.ResponseWriter, error) {
 	}
 	request, ok := value.(http.ResponseWriter)
 	if !ok {
+
 		return nil, ErrParamInvalid{fmt.Errorf("expecting http.ResponseWriter value for key %q (was %T)", key, value)}
 	}
 	return request, nil
