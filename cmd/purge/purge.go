@@ -4,10 +4,10 @@ package purge
 import (
 	"context"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/operations"
+	"github.com/Somebodybro/rclone-WA-proto/cmd"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/filter"
+	"github.com/Somebodybro/rclone-WA-proto/fs/operations"
 	"github.com/spf13/cobra"
 )
 

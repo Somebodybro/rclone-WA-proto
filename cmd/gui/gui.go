@@ -13,13 +13,13 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/fs/rc/rcserver"
-	libhttp "github.com/rclone/rclone/lib/http"
-	"github.com/rclone/rclone/lib/random"
-	"github.com/rclone/rclone/lib/systemd"
+	"github.com/Somebodybro/rclone-WA-proto/cmd"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/rc"
+	"github.com/Somebodybro/rclone-WA-proto/fs/rc/rcserver"
+	libhttp "github.com/Somebodybro/rclone-WA-proto/lib/http"
+	"github.com/Somebodybro/rclone-WA-proto/lib/random"
+	"github.com/Somebodybro/rclone-WA-proto/lib/systemd"
 	"github.com/skratchdot/open-golang/open"
 	"github.com/spf13/cobra"
 )
@@ -62,7 +62,7 @@ is specified, and opens the browser already authenticated.
     rclone gui
 
 By default rclone gui serves the web GUI that was embedded into the
-rclone binary at build time from https://github.com/rclone/rclone-web/
+rclone binary at build time from https://github.com/Somebodybro/rclone-WA-proto-web/
 You can override this by passing a path to either an unpacked GUI
 directory or a dist.zip archive (e.g. one downloaded from the
 rclone-web releases page):

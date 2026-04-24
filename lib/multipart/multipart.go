@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/pool"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/accounting"
+	"github.com/Somebodybro/rclone-WA-proto/lib/atexit"
+	"github.com/Somebodybro/rclone-WA-proto/lib/pacer"
+	"github.com/Somebodybro/rclone-WA-proto/lib/pool"
 	"golang.org/x/sync/errgroup"
 )
 

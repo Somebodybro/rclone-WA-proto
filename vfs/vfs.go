@@ -35,15 +35,15 @@ import (
 
 	"slices"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/cache"
+	"github.com/Somebodybro/rclone-WA-proto/fs/filter"
+	"github.com/Somebodybro/rclone-WA-proto/fs/log"
+	"github.com/Somebodybro/rclone-WA-proto/fs/rc"
+	"github.com/Somebodybro/rclone-WA-proto/fs/walk"
+	"github.com/Somebodybro/rclone-WA-proto/vfs/vfscache"
+	"github.com/Somebodybro/rclone-WA-proto/vfs/vfscommon"
 	"github.com/go-git/go-billy/v5"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/cache"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/log"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/fs/walk"
-	"github.com/rclone/rclone/vfs/vfscache"
-	"github.com/rclone/rclone/vfs/vfscommon"
 )
 
 //go:embed vfs.md

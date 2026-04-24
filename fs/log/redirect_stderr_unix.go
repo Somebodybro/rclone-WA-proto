@@ -7,8 +7,8 @@ package log
 import (
 	"os"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config"
 	"golang.org/x/sys/unix"
 )
 

@@ -8,10 +8,10 @@ import (
 	"io"
 	"syscall"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs/log"
+	"github.com/Somebodybro/rclone-WA-proto/vfs"
 	fusefs "github.com/hanwen/go-fuse/v2/fs"
 	"github.com/hanwen/go-fuse/v2/fuse"
-	"github.com/rclone/rclone/fs/log"
-	"github.com/rclone/rclone/vfs"
 )
 
 // FileHandle is a resource identifier for opened files. Usually, a

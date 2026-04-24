@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/rclone/rclone/fs/rc"
+	"github.com/Somebodybro/rclone-WA-proto/fs/rc"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 )
 
 const globalStats = "global_stats"

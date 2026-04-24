@@ -8,9 +8,9 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs/fserrors"
+	"github.com/Somebodybro/rclone-WA-proto/lib/pacer"
 	"github.com/putdotio/go-putio/putio"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/lib/pacer"
 )
 
 func checkStatusCode(resp *http.Response, expected ...int) error {

@@ -13,11 +13,11 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Somebodybro/rclone-WA-proto/cmd"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config/flags"
+	"github.com/Somebodybro/rclone-WA-proto/fs/fshttp"
 	"github.com/coreos/go-semver/semver"
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/fshttp"
 	"github.com/spf13/cobra"
 )
 

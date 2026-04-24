@@ -9,10 +9,10 @@ import (
 	"path"
 	"time"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/hash"
+	"github.com/Somebodybro/rclone-WA-proto/lib/readers"
 	"github.com/colinmarc/hdfs/v2"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/readers"
 )
 
 // Object describes an HDFS file

@@ -10,11 +10,11 @@ import (
 	"sort"
 	"time"
 
-	"github.com/rclone/rclone/cmd/mountlib"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/lib/file"
+	"github.com/Somebodybro/rclone-WA-proto/cmd/mountlib"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config"
+	"github.com/Somebodybro/rclone-WA-proto/fs/rc"
+	"github.com/Somebodybro/rclone-WA-proto/lib/file"
 )
 
 // Errors

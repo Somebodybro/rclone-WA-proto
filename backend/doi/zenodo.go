@@ -8,9 +8,9 @@ import (
 	"net/url"
 	"regexp"
 
-	"github.com/rclone/rclone/backend/doi/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/Somebodybro/rclone-WA-proto/backend/doi/api"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/lib/rest"
 )
 
 var zenodoRecordRegex = regexp.MustCompile(`zenodo[.](.+)`)

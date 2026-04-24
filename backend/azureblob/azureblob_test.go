@@ -7,9 +7,9 @@ package azureblob
 import (
 	"testing"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/fstest/fstests"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fstest"
+	"github.com/Somebodybro/rclone-WA-proto/fstest/fstests"
 	"github.com/stretchr/testify/assert"
 )
 

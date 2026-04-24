@@ -10,11 +10,11 @@ import (
 	"testing"
 	"time"
 
-	_ "github.com/rclone/rclone/backend/local"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/lib/random"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/local"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/hash"
+	"github.com/Somebodybro/rclone-WA-proto/fstest"
+	"github.com/Somebodybro/rclone-WA-proto/lib/random"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

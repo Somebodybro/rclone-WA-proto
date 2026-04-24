@@ -10,7 +10,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 )
 
 var (

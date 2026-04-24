@@ -10,8 +10,8 @@ import (
 
 	"bazil.org/fuse"
 	fusefs "bazil.org/fuse/fs"
-	"github.com/rclone/rclone/fs/log"
-	"github.com/rclone/rclone/vfs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/log"
+	"github.com/Somebodybro/rclone-WA-proto/vfs"
 )
 
 // File represents a file

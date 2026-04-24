@@ -34,7 +34,7 @@ import (
 	"path/filepath"
 	"syscall"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 	"golang.org/x/sys/unix"
 )
 

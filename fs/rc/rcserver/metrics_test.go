@@ -7,10 +7,10 @@ import (
 	"regexp"
 	"testing"
 
-	_ "github.com/rclone/rclone/backend/local"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/config/configfile"
-	"github.com/rclone/rclone/fs/rc"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/local"
+	"github.com/Somebodybro/rclone-WA-proto/fs/accounting"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config/configfile"
+	"github.com/Somebodybro/rclone-WA-proto/fs/rc"
 	"github.com/stretchr/testify/require"
 )
 

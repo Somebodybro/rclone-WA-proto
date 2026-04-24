@@ -13,10 +13,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/rclone/rclone/cmd/serve/proxy"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fstest"
+	"github.com/Somebodybro/rclone-WA-proto/cmd/serve/proxy"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config/configmap"
+	"github.com/Somebodybro/rclone-WA-proto/fstest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

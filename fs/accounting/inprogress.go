@@ -5,7 +5,7 @@ import (
 	"maps"
 	"sync"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 )
 
 // inProgress holds a synchronized map of in progress transfers

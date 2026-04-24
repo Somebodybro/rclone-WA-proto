@@ -9,11 +9,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/errcount"
+	"github.com/Somebodybro/rclone-WA-proto/cmd"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config/flags"
+	"github.com/Somebodybro/rclone-WA-proto/fs/operations"
+	"github.com/Somebodybro/rclone-WA-proto/lib/errcount"
 	"github.com/spf13/cobra"
 	"golang.org/x/sync/errgroup"
 )

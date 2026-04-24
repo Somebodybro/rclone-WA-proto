@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 	"github.com/rclone/gofakes3"
-	"github.com/rclone/rclone/fs"
 )
 
 // logger output formatted message

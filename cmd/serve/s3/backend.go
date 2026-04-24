@@ -12,10 +12,10 @@ import (
 	"sync"
 	"time"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/vfs"
 	"github.com/ncw/swift/v2"
 	"github.com/rclone/gofakes3"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/vfs"
 )
 
 var (

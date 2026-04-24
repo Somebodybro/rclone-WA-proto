@@ -10,10 +10,10 @@ import (
 	"os"
 	"strings"
 
+	"github.com/Somebodybro/rclone-WA-proto/cmd"
+	"github.com/Somebodybro/rclone-WA-proto/cmd/bisync"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 	"github.com/muesli/reflow/wordwrap"
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/cmd/bisync"
-	"github.com/rclone/rclone/fs"
 	"github.com/spf13/pflag"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"

@@ -3,7 +3,7 @@ package sync
 import (
 	"context"
 
-	"github.com/rclone/rclone/fs/rc"
+	"github.com/Somebodybro/rclone-WA-proto/fs/rc"
 )
 
 func init() {

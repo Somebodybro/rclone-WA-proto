@@ -13,14 +13,14 @@ import (
 
 	"github.com/anacrolix/dms/soap"
 
-	"github.com/rclone/rclone/cmd/serve/servetest"
-	"github.com/rclone/rclone/fs/config/configfile"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/vfs"
-	"github.com/rclone/rclone/vfs/vfscommon"
+	"github.com/Somebodybro/rclone-WA-proto/cmd/serve/servetest"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config/configfile"
+	"github.com/Somebodybro/rclone-WA-proto/fs/rc"
+	"github.com/Somebodybro/rclone-WA-proto/vfs"
+	"github.com/Somebodybro/rclone-WA-proto/vfs/vfscommon"
 
-	_ "github.com/rclone/rclone/backend/local"
-	"github.com/rclone/rclone/fs"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/local"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -102,7 +102,7 @@ func TestServeContent(t *testing.T) {
 
 // Check that ContentDirectory#Browse returns appropriate metadata on the root container.
 func TestContentDirectoryBrowseMetadata(t *testing.T) {
-	// Sample from: https://github.com/rclone/rclone/issues/3253#issuecomment-524317469
+	// Sample from: https://github.com/Somebodybro/rclone-WA-proto/issues/3253#issuecomment-524317469
 	req, err := http.NewRequest("POST", baseURL+serviceControlURL, strings.NewReader(`
 <?xml version="1.0" encoding="utf-8"?>
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"

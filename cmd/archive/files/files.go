@@ -12,10 +12,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/accounting"
+	"github.com/Somebodybro/rclone-WA-proto/fs/operations"
 	"github.com/mholt/archives"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/operations"
 )
 
 // fill tar.Header with metadata if available (too bad username/groupname is not available)

@@ -4,8 +4,8 @@ import (
 	"path"
 	"strings"
 
+	"github.com/Somebodybro/rclone-WA-proto/vfs"
 	"github.com/rclone/gofakes3"
-	"github.com/rclone/rclone/vfs"
 )
 
 func (b *s3Backend) entryListR(_vfs *vfs.VFS, bucket, fdPath, name string, addPrefix bool, response *gofakes3.ObjectList) error {

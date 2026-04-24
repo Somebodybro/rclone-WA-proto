@@ -10,8 +10,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/lib/random"
+	"github.com/Somebodybro/rclone-WA-proto/fstest"
+	"github.com/Somebodybro/rclone-WA-proto/lib/random"
 	"github.com/stretchr/testify/require"
 )
 

@@ -13,16 +13,16 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/backend/imagekit/client"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/readers"
-	"github.com/rclone/rclone/lib/version"
+	"github.com/Somebodybro/rclone-WA-proto/backend/imagekit/client"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config/configmap"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config/configstruct"
+	"github.com/Somebodybro/rclone-WA-proto/fs/hash"
+	"github.com/Somebodybro/rclone-WA-proto/lib/encoder"
+	"github.com/Somebodybro/rclone-WA-proto/lib/pacer"
+	"github.com/Somebodybro/rclone-WA-proto/lib/readers"
+	"github.com/Somebodybro/rclone-WA-proto/lib/version"
 )
 
 const (

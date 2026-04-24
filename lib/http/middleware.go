@@ -9,8 +9,8 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 	goauth "github.com/abbot/go-http-auth"
-	"github.com/rclone/rclone/fs"
 )
 
 // parseAuthorization parses the Authorization header into user, pass

@@ -10,14 +10,14 @@ import (
 	"strings"
 	"testing"
 
-	_ "github.com/rclone/rclone/backend/all" // import all backends
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fs/sync"
-	"github.com/rclone/rclone/fs/walk"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/lib/transform"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/all" // import all backends
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/filter"
+	"github.com/Somebodybro/rclone-WA-proto/fs/operations"
+	"github.com/Somebodybro/rclone-WA-proto/fs/sync"
+	"github.com/Somebodybro/rclone-WA-proto/fs/walk"
+	"github.com/Somebodybro/rclone-WA-proto/fstest"
+	"github.com/Somebodybro/rclone-WA-proto/lib/transform"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/text/unicode/norm"

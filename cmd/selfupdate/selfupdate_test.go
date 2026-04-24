@@ -12,9 +12,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	_ "github.com/rclone/rclone/fstest" // needed to run under integration tests
-	"github.com/rclone/rclone/fstest/testy"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	_ "github.com/Somebodybro/rclone-WA-proto/fstest" // needed to run under integration tests
+	"github.com/Somebodybro/rclone-WA-proto/fstest/testy"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

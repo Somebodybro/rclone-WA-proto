@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/rclone/rclone/backend/mailru/mrhash"
+	"github.com/Somebodybro/rclone-WA-proto/backend/mailru/mrhash"
 	"github.com/stretchr/testify/assert"
 )
 

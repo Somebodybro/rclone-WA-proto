@@ -8,10 +8,10 @@ import (
 	"net"
 	"strings"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/log"
+	"github.com/Somebodybro/rclone-WA-proto/vfs"
 	"github.com/go-git/go-billy/v5"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/log"
-	"github.com/rclone/rclone/vfs"
 	"github.com/willscott/go-nfs"
 )
 

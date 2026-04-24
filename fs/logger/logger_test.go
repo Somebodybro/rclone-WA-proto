@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/rclone/rclone/fs/logger"
+	"github.com/Somebodybro/rclone-WA-proto/fs/logger"
 	"github.com/rogpeppe/go-internal/testscript"
 )
 

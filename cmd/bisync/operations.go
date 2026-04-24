@@ -14,13 +14,13 @@ import (
 	gosync "sync"
 	"time"
 
-	"github.com/rclone/rclone/cmd/bisync/bilib"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/log"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/terminal"
+	"github.com/Somebodybro/rclone-WA-proto/cmd/bisync/bilib"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/accounting"
+	"github.com/Somebodybro/rclone-WA-proto/fs/log"
+	"github.com/Somebodybro/rclone-WA-proto/fs/operations"
+	"github.com/Somebodybro/rclone-WA-proto/lib/atexit"
+	"github.com/Somebodybro/rclone-WA-proto/lib/terminal"
 )
 
 // ErrBisyncAborted signals that bisync is aborted and forces non-zero exit code

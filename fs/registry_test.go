@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/rclone/rclone/fs/config/configmap"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config/configmap"
 	"github.com/spf13/pflag"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

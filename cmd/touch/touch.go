@@ -8,12 +8,12 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/fspath"
-	"github.com/rclone/rclone/fs/object"
-	"github.com/rclone/rclone/fs/operations"
+	"github.com/Somebodybro/rclone-WA-proto/cmd"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config/flags"
+	"github.com/Somebodybro/rclone-WA-proto/fs/fspath"
+	"github.com/Somebodybro/rclone-WA-proto/fs/object"
+	"github.com/Somebodybro/rclone-WA-proto/fs/operations"
 	"github.com/spf13/cobra"
 )
 

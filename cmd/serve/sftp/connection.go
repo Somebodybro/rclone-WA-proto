@@ -12,12 +12,12 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/hash"
+	"github.com/Somebodybro/rclone-WA-proto/lib/terminal"
+	"github.com/Somebodybro/rclone-WA-proto/vfs"
+	"github.com/Somebodybro/rclone-WA-proto/vfs/vfscommon"
 	"github.com/pkg/sftp"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/terminal"
-	"github.com/rclone/rclone/vfs"
-	"github.com/rclone/rclone/vfs/vfscommon"
 	"golang.org/x/crypto/ssh"
 )
 

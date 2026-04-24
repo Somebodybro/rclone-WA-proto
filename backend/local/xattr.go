@@ -7,8 +7,8 @@ import (
 	"strings"
 	"syscall"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 	"github.com/pkg/xattr"
-	"github.com/rclone/rclone/fs"
 )
 
 const (

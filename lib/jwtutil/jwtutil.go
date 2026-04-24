@@ -14,10 +14,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config/configmap"
+	"github.com/Somebodybro/rclone-WA-proto/lib/oauthutil"
 	"github.com/golang-jwt/jwt/v4"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/lib/oauthutil"
 
 	"maps"
 

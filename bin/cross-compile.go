@@ -74,7 +74,7 @@ var osarches = []string{
 	"plan9/amd64",
 	"solaris/amd64",
 	// "js/wasm", // Rclone is too big for js/wasm until https://github.com/golang/go/issues/64856 is fixed
-    "aix/ppc64",
+	"aix/ppc64",
 }
 
 // Special environment flags for a given arch
@@ -259,7 +259,7 @@ func compileArch(version, goos, goarch, dir string) bool {
 	}
 	args := []string{
 		"go", "build",
-		"--ldflags", "-s -X github.com/rclone/rclone/fs.Version=" + version,
+		"--ldflags", "-s -X github.com/Somebodybro/rclone-WA-proto/fs.Version=" + version,
 		"-trimpath",
 		"-o", output,
 		"-tags", *tags,

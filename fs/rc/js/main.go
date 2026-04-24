@@ -16,22 +16,23 @@ import (
 	"runtime"
 	"syscall/js"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/rc"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/rc"
 
 	// Core functionality we need
-	_ "github.com/rclone/rclone/fs/operations"
-	_ "github.com/rclone/rclone/fs/sync"
+	_ "github.com/Somebodybro/rclone-WA-proto/fs/operations"
+	_ "github.com/Somebodybro/rclone-WA-proto/fs/sync"
+	_ "github.com/Somebodybro/rclone-WA-proto/librclone/librclone"
 
-	// _ "github.com/rclone/rclone/backend/all" // import all backends
+	// _ "github.com/Somebodybro/rclone-WA-proto/backend/all" // import all backends
 
 	// Backends
-	_ "github.com/rclone/rclone/backend/alias"
-	_ "github.com/rclone/rclone/backend/drive"
-	_ "github.com/rclone/rclone/backend/ftp"
-	_ "github.com/rclone/rclone/backend/http"
-	_ "github.com/rclone/rclone/backend/local"
-	_ "github.com/rclone/rclone/backend/memory"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/alias"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/drive"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/ftp"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/http"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/local"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/memory"
 )
 
 var (

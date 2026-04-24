@@ -12,13 +12,13 @@ import (
 	"sync"
 	"time"
 
+	"github.com/Somebodybro/rclone-WA-proto/cmd/mountlib"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config"
+	"github.com/Somebodybro/rclone-WA-proto/lib/atexit"
+	"github.com/Somebodybro/rclone-WA-proto/lib/file"
+	"github.com/Somebodybro/rclone-WA-proto/vfs/vfscommon"
 	"github.com/coreos/go-systemd/v22/daemon"
-	"github.com/rclone/rclone/cmd/mountlib"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/file"
-	"github.com/rclone/rclone/vfs/vfscommon"
 )
 
 // Driver implements docker driver api

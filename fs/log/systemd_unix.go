@@ -7,8 +7,8 @@ package log
 import (
 	"log/slog"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 	"github.com/coreos/go-systemd/v22/journal"
-	"github.com/rclone/rclone/fs"
 )
 
 // Enables systemd logs if configured or if auto-detected

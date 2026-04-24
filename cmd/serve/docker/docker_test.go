@@ -17,21 +17,21 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/cmd/mountlib"
-	"github.com/rclone/rclone/cmd/serve/docker"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/fstest/testy"
-	"github.com/rclone/rclone/lib/file"
+	"github.com/Somebodybro/rclone-WA-proto/cmd/mountlib"
+	"github.com/Somebodybro/rclone-WA-proto/cmd/serve/docker"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config"
+	"github.com/Somebodybro/rclone-WA-proto/fstest"
+	"github.com/Somebodybro/rclone-WA-proto/fstest/testy"
+	"github.com/Somebodybro/rclone-WA-proto/lib/file"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	_ "github.com/rclone/rclone/backend/local"
-	_ "github.com/rclone/rclone/backend/memory"
-	_ "github.com/rclone/rclone/cmd/cmount"
-	_ "github.com/rclone/rclone/cmd/mount"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/local"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/memory"
+	_ "github.com/Somebodybro/rclone-WA-proto/cmd/cmount"
+	_ "github.com/Somebodybro/rclone-WA-proto/cmd/mount"
 )
 
 func initialise(ctx context.Context, t *testing.T) (string, fs.Fs) {

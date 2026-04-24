@@ -8,11 +8,11 @@ import (
 	"os"
 	"time"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/accounting"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config/obscure"
+	"github.com/Somebodybro/rclone-WA-proto/fs/fshttp"
 	smb2 "github.com/cloudsoda/go-smb2"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fshttp"
 	"golang.org/x/sync/errgroup"
 )
 

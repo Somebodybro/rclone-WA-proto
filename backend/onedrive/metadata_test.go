@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/rclone/rclone/backend/onedrive/api"
+	"github.com/Somebodybro/rclone-WA-proto/backend/onedrive/api"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 	"github.com/go-chi/chi/v5"
-	"github.com/rclone/rclone/fs"
 )
 
 const (

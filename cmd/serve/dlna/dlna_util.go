@@ -13,9 +13,9 @@ import (
 	"net/http/httputil"
 	"os"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 	"github.com/anacrolix/dms/soap"
 	"github.com/anacrolix/dms/upnp"
-	"github.com/rclone/rclone/fs"
 )
 
 // Return a default "friendly name" for the server.

@@ -8,7 +8,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/rclone/rclone/backend/googlephotos/api"
+	"github.com/Somebodybro/rclone-WA-proto/backend/googlephotos/api"
 )
 
 // All the albums

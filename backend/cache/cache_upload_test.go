@@ -12,9 +12,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/backend/cache"
-	_ "github.com/rclone/rclone/backend/drive"
-	"github.com/rclone/rclone/fs"
+	"github.com/Somebodybro/rclone-WA-proto/backend/cache"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/drive"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 	"github.com/stretchr/testify/require"
 )
 

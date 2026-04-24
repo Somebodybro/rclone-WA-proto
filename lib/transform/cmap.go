@@ -5,7 +5,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 	"golang.org/x/text/encoding/charmap"
 )
 

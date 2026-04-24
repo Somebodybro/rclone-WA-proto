@@ -20,13 +20,13 @@ import (
 	"strings"
 	"time"
 
-	_ "github.com/rclone/rclone/backend/all" // import all fs
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configfile"
-	"github.com/rclone/rclone/fstest/runs"
-	"github.com/rclone/rclone/fstest/testserver"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/pacer"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/all" // import all fs
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/config/configfile"
+	"github.com/Somebodybro/rclone-WA-proto/fstest/runs"
+	"github.com/Somebodybro/rclone-WA-proto/fstest/testserver"
+	"github.com/Somebodybro/rclone-WA-proto/lib/atexit"
+	"github.com/Somebodybro/rclone-WA-proto/lib/pacer"
 )
 
 func init() {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 )
 
 // FsOptions returns the batch mode fs.Options

@@ -6,9 +6,9 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/Somebodybro/rclone-WA-proto/fstest/fstests"
 	"github.com/dropbox/dropbox-sdk-go-unofficial/v6/dropbox"
 	"github.com/dropbox/dropbox-sdk-go-unofficial/v6/dropbox/files"
-	"github.com/rclone/rclone/fstest/fstests"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

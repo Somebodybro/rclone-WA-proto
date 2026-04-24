@@ -8,9 +8,9 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/fserrors"
 	"github.com/aalpar/deheap"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/fserrors"
 )
 
 // compare two items for order by

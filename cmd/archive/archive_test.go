@@ -5,18 +5,18 @@ import (
 	"strings"
 	"testing"
 
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/local"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/memory"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/operations"
+	"github.com/Somebodybro/rclone-WA-proto/fstest"
 	"github.com/mholt/archives"
-	_ "github.com/rclone/rclone/backend/local"
-	_ "github.com/rclone/rclone/backend/memory"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fstest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/rclone/rclone/cmd/archive/create"
-	"github.com/rclone/rclone/cmd/archive/extract"
-	"github.com/rclone/rclone/cmd/archive/list"
+	"github.com/Somebodybro/rclone-WA-proto/cmd/archive/create"
+	"github.com/Somebodybro/rclone-WA-proto/cmd/archive/extract"
+	"github.com/Somebodybro/rclone-WA-proto/cmd/archive/list"
 )
 
 var (

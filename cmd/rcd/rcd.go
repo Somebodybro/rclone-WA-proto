@@ -5,13 +5,13 @@ import (
 	"context"
 	"strings"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/fs/rc/rcflags"
-	"github.com/rclone/rclone/fs/rc/rcserver"
-	libhttp "github.com/rclone/rclone/lib/http"
-	"github.com/rclone/rclone/lib/systemd"
+	"github.com/Somebodybro/rclone-WA-proto/cmd"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/rc"
+	"github.com/Somebodybro/rclone-WA-proto/fs/rc/rcflags"
+	"github.com/Somebodybro/rclone-WA-proto/fs/rc/rcserver"
+	libhttp "github.com/Somebodybro/rclone-WA-proto/lib/http"
+	"github.com/Somebodybro/rclone-WA-proto/lib/systemd"
 	"github.com/spf13/cobra"
 )
 

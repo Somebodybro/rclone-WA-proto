@@ -9,7 +9,7 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/rclone/rclone/lib/caller"
+	"github.com/Somebodybro/rclone-WA-proto/lib/caller"
 )
 
 // LogLevel describes rclone's logs.  These are a subset of the syslog log levels.

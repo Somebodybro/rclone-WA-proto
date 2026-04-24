@@ -4,10 +4,10 @@ package combine_test
 import (
 	"testing"
 
-	_ "github.com/rclone/rclone/backend/local"
-	_ "github.com/rclone/rclone/backend/memory"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/fstest/fstests"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/local"
+	_ "github.com/Somebodybro/rclone-WA-proto/backend/memory"
+	"github.com/Somebodybro/rclone-WA-proto/fstest"
+	"github.com/Somebodybro/rclone-WA-proto/fstest/fstests"
 )
 
 var (

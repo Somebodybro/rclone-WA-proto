@@ -14,11 +14,11 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/Somebodybro/rclone-WA-proto/cmd/serve/dlna/upnpav"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/vfs"
 	"github.com/anacrolix/dms/dlna"
 	"github.com/anacrolix/dms/upnp"
-	"github.com/rclone/rclone/cmd/serve/dlna/upnpav"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/vfs"
 )
 
 type contentDirectoryService struct {

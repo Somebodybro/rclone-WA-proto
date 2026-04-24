@@ -11,10 +11,10 @@ import (
 
 	"github.com/buengese/sgzip"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/chunkedreader"
-	"github.com/rclone/rclone/fs/hash"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs/accounting"
+	"github.com/Somebodybro/rclone-WA-proto/fs/chunkedreader"
+	"github.com/Somebodybro/rclone-WA-proto/fs/hash"
 )
 
 // gzipModeHandler implements compressionModeHandler for gzip

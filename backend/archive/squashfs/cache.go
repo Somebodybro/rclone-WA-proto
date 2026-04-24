@@ -10,8 +10,8 @@ import (
 	"os"
 	"sync"
 
+	"github.com/Somebodybro/rclone-WA-proto/vfs"
 	"github.com/diskfs/go-diskfs/backend"
-	"github.com/rclone/rclone/vfs"
 )
 
 // Cache file handles for accessing the file

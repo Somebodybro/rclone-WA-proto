@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/Somebodybro/rclone-WA-proto/fs"
 )
 
 // OptionsInfo describes the Options in use

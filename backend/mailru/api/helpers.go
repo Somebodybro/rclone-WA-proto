@@ -11,7 +11,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/Somebodybro/rclone-WA-proto/lib/readers"
 )
 
 // protocol errors
