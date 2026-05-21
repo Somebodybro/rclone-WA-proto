@@ -102,7 +102,8 @@ func RPC(method string, input string) (output string, status int) {
 	}
 
 	// TODO: handle these cases
-	if call.NeedsRequest {
+	_, requestErr := in.Get("_request")
+	if call.NeedsRequest && !(requestErr == nil && runtime.GOOS == "js") {
 		return writeError(method, in, fmt.Errorf("method %q needs request, not supported", method), http.StatusNotFound)
 		// Add the request to RC
 		//in["_request"] = r
