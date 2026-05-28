@@ -132,24 +132,44 @@ func (p Params) GetHTTPRequest() (*http.Request, error) {
 		if !ok {
 			return nil, ErrParamInvalid{fmt.Errorf("expected map[string] request to have value for key url")}
 		}
-		dataFloats, ok := asMap["data"].(map[string]interface{})
-		if !ok {
-			log.Printf("%T", asMap["data"].(map[string]interface{})["0"])
-			log.Print(asMap["data"])
-			dataFloats = map[string]interface{}{}
-		}
-		data := make([]byte, len(dataFloats))
-		for key, fl := range dataFloats {
-			asFloat, ok := fl.(float64)
-			if ok {
-				i, err := strconv.Atoi(key)
-				if err != nil {
-					log.Print(err)
-					break
+		data := []byte{}
+		dataFloatsAsMap, ok := asMap["data"].(map[string]interface{})
+
+		if ok {
+			data = make([]byte, len(dataFloatsAsMap))
+			for key, fl := range dataFloatsAsMap {
+				asFloat, ok := fl.(float64)
+				if ok {
+					i, err := strconv.Atoi(key)
+					if err != nil {
+						log.Print(err)
+						break
+					}
+					data[i] = byte(asFloat)
 				}
-				data[i] = byte(asFloat)
+			}
+		} else {
+			dataFloatsAsArray, ok := asMap["data"].([]interface{})
+			if !ok {
+				log.Printf("%T", dataFloatsAsMap["0"])
+				log.Print(asMap["data"])
+				dataFloatsAsMap = map[string]interface{}{}
+			}
+			data = make([]byte, len(dataFloatsAsArray))
+			for index, fl := range dataFloatsAsArray {
+				asFloat, ok := fl.(float64)
+				if ok {
+					data[index] = byte(asFloat)
+				} else {
+					log.Print("Not float trying byte")
+					asInt, ok := fl.(byte)
+					if ok {
+						data[index] = asInt
+					}
+				}
 			}
 		}
+
 		isMultipart, ok := asMap["multipart"].(bool)
 		if !ok {
 			isMultipart = false
